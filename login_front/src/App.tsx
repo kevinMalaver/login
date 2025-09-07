@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Login from './components/login';
+import LoginWindow from './windows/login-window';
 
 function App() {
   /*
@@ -32,7 +33,7 @@ function App() {
       </p>
     </>
   )*/
-  return <Login />;
+  return <LoginWindow/>;
 }
 
 export default App
