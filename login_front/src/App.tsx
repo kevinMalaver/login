@@ -2,8 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Login from './components/login';
 import LoginWindow from './windows/login-window';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './components/login';
+import Register from './components/register';
 
 function App() {
   /*
@@ -33,7 +35,15 @@ function App() {
       </p>
     </>
   )*/
-  return <LoginWindow/>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/*' element={<LoginWindow><Login/></LoginWindow>} />
+        <Route path='/login' element={<LoginWindow><Login/></LoginWindow>} />
+        <Route path='/Register' element={<LoginWindow><Register/></LoginWindow>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App
